@@ -13,6 +13,7 @@ public class PlaySoundsOnBeat : MonoBehaviour
     //Your items that will be created according to your beat
     public GameObject myPrefab1, myPrefab2;
 
+    
     void Update()
     {
         if (BPM._beatFull)
@@ -20,18 +21,19 @@ public class PlaySoundsOnBeat : MonoBehaviour
             _soundManager.Playsound(_tap, 1);
             if (BPM._beatCountFull % 2 == 0)
             {
-                GameObject go = (GameObject)Instantiate(myPrefab1);
+               
+                GameObject go = (GameObject)Instantiate(myPrefab1, transform.position, Quaternion.identity);
                 _randomStrum = Random.Range(0, _strum.Length);
             }
         }
         if (BPM._beatD8 && BPM._beatcountD8 % 2 == 0)
         {
-            _soundManager.Playsound(_tick, 0.1f);
+          //  _soundManager.Playsound(_tick, 0.1f);
         }
         if (BPM._beatD8 && (BPM._beatcountD8) % 8 == 2 || (BPM._beatcountD8) % 8 == 4)
         {
-            GameObject go = (GameObject)Instantiate(myPrefab2);
-            _soundManager.Playsound(_strum[_randomStrum], 1);
+            //GameObject go = (GameObject)Instantiate(myPrefab2, transform.position, transform.rotation);
+            //_soundManager.Playsound(_strum[_randomStrum], 1);
         }
     }
 }
