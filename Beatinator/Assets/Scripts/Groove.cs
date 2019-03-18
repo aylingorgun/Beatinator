@@ -23,7 +23,7 @@ public class Groove : MonoBehaviour
     void Start()
     {
         //starting position
-        idle_position.Set(-5.0f, 1.0f, -2.0f);
+        idle_position.Set(-5.0f, 1.0f, - 2.0f);
 
         // X = v . t
         speed = distance / timeInterval;
