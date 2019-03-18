@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Groove : MonoBehaviour
 {
+
+    /* 
+        This is the class for visual beat meter.     
+    */
+
+
     //X position to move
     private float distance = 5.0f;
     //Our path complition time
@@ -30,6 +36,7 @@ public class Groove : MonoBehaviour
         
         if (timeLeft < 0.0f)
         {
+            Debug.Log(timeLeft);
             //go back to initial state
             timeLeft = 1.0f;
             transform.SetPositionAndRotation(idle_position, Quaternion.identity);
