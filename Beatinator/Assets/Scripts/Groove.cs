@@ -29,7 +29,7 @@ public class Groove : MonoBehaviour
         speed = distance / timeInterval;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         timeLeft -= Time.deltaTime;
         transform.position += Vector3.right * speed;
