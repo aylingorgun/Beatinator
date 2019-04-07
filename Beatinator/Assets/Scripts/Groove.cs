@@ -20,6 +20,9 @@ public class Groove : MonoBehaviour
     private float timeLeft = 1.0f;
     Vector3 idle_position;
 
+    public Transform target;
+    public Vector3 offset = new Vector3(0f, 0, 0f);
+
     void Start()
     {
         //starting position
@@ -40,6 +43,8 @@ public class Groove : MonoBehaviour
             //go back to initial state
             timeLeft = 1.0f;
             transform.SetPositionAndRotation(idle_position, Quaternion.identity);
+
+            transform.position = target.position + offset;
         }
 
     }
