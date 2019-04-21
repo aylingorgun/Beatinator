@@ -27,6 +27,9 @@ public class Move : MonoBehaviour
         {
             transform.position += Vector3.back * speed * Time.deltaTime * step;
         }
-
+        if (gameObject.tag == "Wall")
+        {
+            speed = 0;
+        }
     }
 }
