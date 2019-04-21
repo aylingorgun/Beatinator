@@ -12,10 +12,10 @@ public class TileManager : MonoBehaviour
     private Transform playerTransform;
     // This is inital tiles starting point it exists because 
     //if we don't have this first tile will be created above us.
-    private float spawnZ = -10f;
+    private float spawnZ = -12.2f;
     //Our tiles length we have this because we will calculate 
     //where should we create the next tile.
-    private float tileLength = 10;   
+    private float tileLength = 34.2f;   
     //This is the value of when we should delete the previous tile.
     private float safeZone = 40.0f;         
     //How many tiles should be on the screen. For mobile dev keep it low.
