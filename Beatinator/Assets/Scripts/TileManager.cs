@@ -11,11 +11,11 @@ public class TileManager : MonoBehaviour
     // This is player's transform values
     private Transform playerTransform;
     // This is inital tiles starting point it exists because 
-    //if we don't have this first tile will created above us.
+    //if we don't have this first tile will be created above us.
     private float spawnZ = -12.2f;
     //Our tiles length we have this because we will calculate 
     //where should we create the next tile.
-    private float tileLengt = 34.2f;   
+    private float tileLength = 34.2f;   
     //This is the value of when we should delete the previous tile.
     private float safeZone = 40.0f;         
     //How many tiles should be on the screen. For mobile dev keep it low.
@@ -34,14 +34,14 @@ public class TileManager : MonoBehaviour
         {
             if (i < 2)//First two are kind of default tiles for test.
                 SpawnTile(0);
-            else //Than randomize
+            else //Then randomize
                 SpawnTile();
         }
     }
     
     private void Update()
     {
-        if(playerTransform.position.z - safeZone > (spawnZ - amnTilesOnScreen * tileLengt))
+        if(playerTransform.position.z - safeZone > (spawnZ - amnTilesOnScreen * tileLength))
         {
             SpawnTile();
             DeleteTile();
@@ -58,7 +58,7 @@ public class TileManager : MonoBehaviour
 
         go.transform.SetParent(transform);
         go.transform.position = Vector3.forward * spawnZ;
-        spawnZ += tileLengt;
+        spawnZ += tileLength;
         activeTiles.Add(go);
     }
 

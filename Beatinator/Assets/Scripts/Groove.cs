@@ -21,12 +21,12 @@ public class Groove : MonoBehaviour
     Vector3 idle_position;
 
     public Transform target;
-    public Vector3 offset = new Vector3(0f, 0, 0f);
+    public Vector3 offset = new Vector3(-5.0f, 0f, 0f);
 
     void Start()
     {
         //starting position
-        idle_position.Set(-5.0f, 1.0f, - 2.0f);
+        idle_position.Set(5.0f, 1.0f, - 2.0f);
 
         // X = v . t
         speed = distance / timeInterval;
@@ -44,6 +44,8 @@ public class Groove : MonoBehaviour
             timeLeft = 1.0f;
             transform.SetPositionAndRotation(idle_position, Quaternion.identity);
 
+            //Garbage collect?
+            //transform.position = new Vector3(-5.0f, target.position.y, target.position.z);
             transform.position = target.position + offset;
         }
 
