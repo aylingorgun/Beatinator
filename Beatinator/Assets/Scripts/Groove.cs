@@ -39,7 +39,7 @@ public class Groove : MonoBehaviour
         
         if (timeLeft < 0.0f)
         {
-            Debug.Log(timeLeft);
+            //Debug.Log(timeLeft);
             //go back to initial state
             timeLeft = 1.0f;
             transform.SetPositionAndRotation(idle_position, Quaternion.identity);

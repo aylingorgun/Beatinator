@@ -62,6 +62,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BPM.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Collision\BackCollision.cs" />
+    <Compile Include="Assets\Scripts\Collision\FrontCollision.cs" />
+    <Compile Include="Assets\Scripts\Collision\LeftCollision.cs" />
+    <Compile Include="Assets\Scripts\Collision\RightCollision.cs" />
     <Compile Include="Assets\Scripts\Groove.cs" />
     <Compile Include="Assets\Scripts\Move.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />

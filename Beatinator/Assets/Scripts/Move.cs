@@ -4,29 +4,53 @@ using UnityEngine.SceneManagement;
 
 public class Move : MonoBehaviour
 {
-    //Get rid of speed?
-    public float speed = 1f;
+    //Step size
     public float step = 2f;
+    
+    //All side colliders - unused?
+    //public BoxCollider colliderFront;
+    //public BoxCollider colliderBack;
+    //public BoxCollider colliderLeft;
+    //public BoxCollider colliderRight;
+    
+    //Dummy variable to track faulty movements
+    private int fault = 0;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Has collided with " + other.attachedRigidbody.tag + "\nFault: " + fault);
+    }
 
     void Update()
     {
       
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.position += Vector3.left * speed *  step;
+            if (LeftCollision.isLeftAvailable)
+                transform.position += Vector3.left * step;
+            else
+                fault++;
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            transform.position += Vector3.right * speed  * step;
+            if (RightCollision.isRightAvailable)
+                transform.position += Vector3.right * step;
+            else
+                fault++;
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            transform.position += Vector3.forward * speed  * step;
+            if (FrontCollision.isFrontAvailable)
+                transform.position += Vector3.forward * step;
+            else
+                fault++;
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            transform.position += Vector3.back * speed  * step;
+            if (BackCollision.isBackAvailable)
+                transform.position += Vector3.back * step;
+            else
+                fault++;
         }
-
     }
 }
