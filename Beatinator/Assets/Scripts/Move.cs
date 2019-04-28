@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Move : MonoBehaviour
 {
     //Step size
     public float step = 2f;
-    
+    public float jumpHeight = 0.35f;
+    public TextMeshProUGUI faultNumber;
+
     //All side colliders - unused?
     //public BoxCollider colliderFront;
     //public BoxCollider colliderBack;
@@ -26,31 +29,41 @@ public class Move : MonoBehaviour
       
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            transform.position += Vector3.up * jumpHeight;
             if (LeftCollision.isLeftAvailable)
                 transform.position += Vector3.left * step;
             else
-                fault++;
+                Mistake();
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            transform.position += Vector3.up * jumpHeight;
             if (RightCollision.isRightAvailable)
                 transform.position += Vector3.right * step;
             else
-                fault++;
+                Mistake();
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            transform.position += Vector3.up * jumpHeight;
             if (FrontCollision.isFrontAvailable)
                 transform.position += Vector3.forward * step;
             else
-                fault++;
+                Mistake();
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
+            transform.position += Vector3.up * jumpHeight;
             if (BackCollision.isBackAvailable)
                 transform.position += Vector3.back * step;
             else
-                fault++;
+                Mistake();
         }
+    }
+
+    private void Mistake()
+    {   
+        //TODO: Implement fault tracking class
+        faultNumber.text = (++fault).ToString();
     }
 }
