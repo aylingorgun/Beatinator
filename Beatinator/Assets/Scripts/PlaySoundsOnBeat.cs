@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlaySoundsOnBeat : MonoBehaviour
 {
@@ -13,7 +14,16 @@ public class PlaySoundsOnBeat : MonoBehaviour
     //Your items that will be created according to your beat
     public GameObject myPrefab1, myPrefab2;
 
-    
+    public Animation left, right;
+
+    private void Start()
+    {
+
+        left.gameObject.GetComponent<Animation>().enabled = false;
+        right.gameObject.GetComponent<Animation>().enabled = false;
+    }
+
+
     void Update()
     {
         if (BPM._beatFull)
@@ -21,7 +31,9 @@ public class PlaySoundsOnBeat : MonoBehaviour
             _soundManager.Playsound(_tap, 1);
             if (BPM._beatCountFull % 2 == 0)
             {
-               
+                left.gameObject.GetComponent<Animation>().enabled = true;
+                right.gameObject.GetComponent<Animation>().enabled = true;
+
                 GameObject go = (GameObject)Instantiate(myPrefab1, transform.position, Quaternion.identity);
                 _randomStrum = Random.Range(0, _strum.Length);
             }

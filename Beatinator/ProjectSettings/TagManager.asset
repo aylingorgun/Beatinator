@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Wall
   - Floor
+  - Fire
+  - Groove
+  - Ball
   layers:
   - Default
   - TransparentFX
