@@ -11,6 +11,11 @@ public class LeftCollision : MonoBehaviour
         isLeftAvailable = false;
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        isLeftAvailable = false;
+    }
+
     private void OnTriggerExit(Collider other)
     {
         isLeftAvailable = true;

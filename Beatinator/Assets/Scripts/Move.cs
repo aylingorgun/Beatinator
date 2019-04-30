@@ -21,7 +21,7 @@ public class Move : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Has collided with " + other.attachedRigidbody.tag + "\nFault: " + fault);
+        Debug.Log("Has collided with " + other.attachedRigidbody.tag);
     }
 
     void Update()

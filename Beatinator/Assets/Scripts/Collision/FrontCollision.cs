@@ -11,6 +11,11 @@ public class FrontCollision : MonoBehaviour
         isFrontAvailable = false;
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        isFrontAvailable = false;
+    }
+
     private void OnTriggerExit(Collider other)
     {
         isFrontAvailable = true;

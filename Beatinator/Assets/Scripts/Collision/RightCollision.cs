@@ -11,6 +11,11 @@ public class RightCollision : MonoBehaviour
         isRightAvailable = false;
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        isRightAvailable = false;
+    }
+
     private void OnTriggerExit(Collider other)
     {
         isRightAvailable = true;
