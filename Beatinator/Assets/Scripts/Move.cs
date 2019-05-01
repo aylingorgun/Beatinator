@@ -6,15 +6,11 @@ using UnityEngine.UI;
 
 public class Move : MonoBehaviour
 {
-    //Step size
+    
     public float step = 2f;
     public float jumpHeight = 0.35f;
-
-    //All side colliders - unused?
-    //public BoxCollider colliderFront;
-    //public BoxCollider colliderBack;
-    //public BoxCollider colliderLeft;
-    //public BoxCollider colliderRight;
+    private int faultCount = 0;
+    public TextMeshProUGUI faultNumber;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -24,29 +20,43 @@ public class Move : MonoBehaviour
     void Update()
     {
       
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && (Colision.flag == true))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.position += Vector3.up * jumpHeight;
-            if (LeftCollision.isLeftAvailable)
+            if (LeftCollision.isLeftAvailable && CircleColision.TryMoving())
                 transform.position += Vector3.left * step;
+            else
+                Mistake();
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow) && (Colision.flag == true))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             transform.position += Vector3.up * jumpHeight;
-            if (RightCollision.isRightAvailable)
+            if (RightCollision.isRightAvailable && CircleColision.TryMoving())
                 transform.position += Vector3.right * step;
+            else
+                Mistake();
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow) && (Colision.flag == true))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             transform.position += Vector3.up * jumpHeight;
-            if (FrontCollision.isFrontAvailable)
+            if (FrontCollision.isFrontAvailable && CircleColision.TryMoving())
                 transform.position += Vector3.forward * step;
+            else
+                Mistake();
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow) && (Colision.flag == true))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             transform.position += Vector3.up * jumpHeight;
-            if (BackCollision.isBackAvailable)
+            if (BackCollision.isBackAvailable && CircleColision.TryMoving())
                 transform.position += Vector3.back * step;
+            else
+                Mistake();
         }
+    }
+
+    //May also implement mistake but move anyways
+    private void Mistake()
+    {
+        faultNumber.SetText((++faultCount).ToString());
     }
 }
