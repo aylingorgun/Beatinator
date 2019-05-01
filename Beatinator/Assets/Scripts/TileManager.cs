@@ -27,6 +27,7 @@ public class TileManager : MonoBehaviour
 
     private void Start()
     {
+        
         activeTiles = new List<GameObject>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -52,7 +53,10 @@ public class TileManager : MonoBehaviour
     {
         GameObject go;
         if (prefabIndex == -1)
+        {
             go = Instantiate(tilePrefabs[RandomPrefabIndex()]) as GameObject;
+            GenerateHolesandWalls.holeCount = 9;
+        }
         else
             go = Instantiate(tilePrefabs[prefabIndex]) as GameObject;
 
@@ -60,6 +64,7 @@ public class TileManager : MonoBehaviour
         go.transform.position = Vector3.forward * spawnZ;
         spawnZ += tileLength;
         activeTiles.Add(go);
+        GenerateHolesandWalls.holeCount = 0;
     }
 
     private void DeleteTile()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.43784013, g: 0.48575997, b: 0.56603676, a: 1}
+  m_IndirectSpecularColor: {r: 0.43784055, g: 0.4857607, b: 0.5660381, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1103,6 +1103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefabs:
   - {fileID: 149251955573991417, guid: 5423f19abccf928488e99e9244bfc363, type: 3}
+  - {fileID: 149251955573991417, guid: 7d0fa2a9b66e2964ba879510ff4a2340, type: 3}
+  - {fileID: 149251955573991417, guid: 365b9d897d90cb84aa511264b24bdf6f, type: 3}
 --- !u!4 &804318993
 Transform:
   m_ObjectHideFlags: 0
@@ -1860,7 +1862,7 @@ MonoBehaviour:
   _strum: []
   myPrefab1: {fileID: 1427398295639630913, guid: 4aa683f935c54bb48be9c17898a678b6,
     type: 3}
-  myPrefab2: {fileID: 1427398295639630913, guid: 9eb6ecb19e1230140977851bfcb0a432,
+  myPrefab2: {fileID: 1427398295639630913, guid: 4aa683f935c54bb48be9c17898a678b6,
     type: 3}
   left: {fileID: 147138762}
   right: {fileID: 2011593642}
