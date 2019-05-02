@@ -12,6 +12,8 @@ public class Move : MonoBehaviour
     private int faultCount = 0;
     public TextMeshProUGUI faultNumber;
 
+    public GameObject RetryUI;
+
     public BoxCollider player;
 
     private void OnTriggerEnter(Collider other)
@@ -20,6 +22,7 @@ public class Move : MonoBehaviour
         if(other.gameObject.tag == "Hole")
         {
             player.enabled = false;
+            RetryUI.SetActive(true);
         }
     }
 

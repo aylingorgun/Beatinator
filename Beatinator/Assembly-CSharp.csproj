@@ -60,16 +60,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\BPM.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\Scripts\CircleColision.cs" />
     <Compile Include="Assets\Scripts\Collision\BackCollision.cs" />
+    <Compile Include="Assets\Scripts\Collision\CircleColision.cs" />
     <Compile Include="Assets\Scripts\Collision\FrontCollision.cs" />
     <Compile Include="Assets\Scripts\Collision\LeftCollision.cs" />
     <Compile Include="Assets\Scripts\Collision\RightCollision.cs" />
     <Compile Include="Assets\Scripts\GenerateHolesandWalls.cs" />
     <Compile Include="Assets\Scripts\Groove.cs" />
+    <Compile Include="Assets\Scripts\Menus\OpeningMenu.cs" />
+    <Compile Include="Assets\Scripts\Menus\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Move.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlaySoundsOnBeat.cs" />
