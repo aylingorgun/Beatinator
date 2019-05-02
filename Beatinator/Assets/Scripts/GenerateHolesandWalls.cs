@@ -36,7 +36,7 @@ public class GenerateHolesandWalls : MonoBehaviour
             xPos = Random.Range(xMin, xMax+1);
             zPos = Random.Range(zMin, zMax+1);
 
-            Instantiate(Hole, new Vector3(xPos, 1, zPos), Quaternion.identity);
+            Instantiate(Hole, new Vector3(xPos, 0.15f, zPos), Quaternion.identity);
 
             yield return new WaitForSeconds(0);
             holeCount++;

@@ -11,10 +11,17 @@ public class Move : MonoBehaviour
     public float jumpHeight = 0.35f;
     private int faultCount = 0;
     public TextMeshProUGUI faultNumber;
-    
+
+    public BoxCollider player;
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Has collided with " + other.attachedRigidbody.tag);
+        //Debug.Log("Has collided with " + other.attachedRigidbody.tag);
+        if(other.gameObject.tag == "Hole")
+        {
+            player.enabled = false;
+            Debug.Log("coll");
+        }
     }
 
     void Update()

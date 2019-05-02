@@ -9,6 +9,7 @@ TagManager:
   - Fire
   - Groove
   - Ball
+  - Hole
   layers:
   - Default
   - TransparentFX

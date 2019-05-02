@@ -519,8 +519,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.2807626, y: 1, z: 1}
+  m_Center: {x: 0.3596187, y: 0, z: 0}
 --- !u!23 &492486422
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1013,8 +1013,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 0.34249076}
+  m_Center: {x: 0, y: 0, z: -0.32875463}
 --- !u!23 &736746233
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1164,8 +1164,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 0.17931016}
+  m_Center: {x: 0, y: 0, z: 0.41034478}
 --- !u!23 &863507068
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2256,8 +2256,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.2940765, y: 1, z: 1}
+  m_Center: {x: -0.3529616, y: 0, z: 0}
 --- !u!23 &2021337200
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2412,8 +2412,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   step: 2
-  jumpHeight: 0.35
+  jumpHeight: 0
   faultNumber: {fileID: 1058295212}
+  player: {fileID: 2115078658}
 --- !u!54 &2115078654
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2441,5 +2442,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.65063775, y: 1, z: 0.48213768}
+  m_Center: {x: -0.034595072, y: 0, z: -0.08334756}
