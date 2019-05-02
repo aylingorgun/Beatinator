@@ -55,7 +55,6 @@ public class TileManager : MonoBehaviour
         if (prefabIndex == -1)
         {
             go = Instantiate(tilePrefabs[RandomPrefabIndex()]) as GameObject;
-            GenerateHolesandWalls.holeCount = 9;
         }
         else
             go = Instantiate(tilePrefabs[prefabIndex]) as GameObject;

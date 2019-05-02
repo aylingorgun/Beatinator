@@ -20,7 +20,6 @@ public class Move : MonoBehaviour
         if(other.gameObject.tag == "Hole")
         {
             player.enabled = false;
-            Debug.Log("coll");
         }
     }
 
