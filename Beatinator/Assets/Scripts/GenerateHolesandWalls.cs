@@ -11,11 +11,15 @@ public class GenerateHolesandWalls : MonoBehaviour
     public GameObject zMinObj;
     public GameObject zMaxObj;
 
-    public GameObject Hole;
+    public GameObject[] HolesAndWalls;
     public int xPos;
     public int zPos;
 
     public static int holeCount;
+
+    int i;
+
+    int xMin, xMax, zMin, zMax;
 
     void Start()
     {
@@ -25,22 +29,33 @@ public class GenerateHolesandWalls : MonoBehaviour
 
     IEnumerator HoleDrop()
     {
-        int xMin = (int)(xMinObj.transform.position.x);
-        int xMax = (int)(xMaxObj.transform.position.x);
+        xMin = (int)(xMinObj.transform.position.x);
+        xMax = (int)(xMaxObj.transform.position.x);
 
-        int zMin = (int)(zMinObj.transform.position.z);
-        int zMax = (int)(zMaxObj.transform.position.z);
+        zMin = (int)(zMinObj.transform.position.z);
+        zMax = (int)(zMaxObj.transform.position.z);
 
         while (holeCount < 10)
         {
             xPos = Random.Range(xMin, xMax+1);
             zPos = Random.Range(zMin, zMax+1);
 
-            Instantiate(Hole, new Vector3(xPos, 0.15f, zPos), Quaternion.identity);
+            switch (i)
+            {
+                case 0:
+                    Instantiate(HolesAndWalls[0], new Vector3(xPos, 0.15f, zPos), Quaternion.Euler(0, 180, 0));
+                    yield return new WaitForSeconds(0);
+                    holeCount++;
+                    break;
+                case 1:
+                    Instantiate(HolesAndWalls[1], new Vector3(xPos, 0.30f, zPos), Quaternion.Euler(105, 0, 0));
+                    yield return new WaitForSeconds(0);
+                    holeCount++;
+                    break;
+                default: break;
 
-            yield return new WaitForSeconds(0);
-            holeCount++;
+            }
+            i = Random.Range(0, 2);       
         }
     }
-
 }

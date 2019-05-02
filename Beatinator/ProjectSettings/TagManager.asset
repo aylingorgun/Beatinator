@@ -10,6 +10,7 @@ TagManager:
   - Groove
   - Ball
   - Hole
+  - Wall2
   layers:
   - Default
   - TransparentFX

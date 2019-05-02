@@ -19,7 +19,7 @@ public class Move : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("Has collided with " + other.attachedRigidbody.tag);
-        if(other.gameObject.tag == "Hole")
+        if(other.gameObject.tag == "Hole" || other.gameObject.tag == "Wall2")
         {
             player.enabled = false;
             RetryUI.SetActive(true);
