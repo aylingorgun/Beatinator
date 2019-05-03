@@ -31,6 +31,7 @@ public class PlaySoundsOnBeat : MonoBehaviour
             _soundManager.Playsound(_tap, 1);
             if (BPM._beatCountFull % 2 == 0)
             {
+                //Throws some errors when pausing
                 left.gameObject.GetComponent<Animation>().enabled = true;
                 right.gameObject.GetComponent<Animation>().enabled = true;
 

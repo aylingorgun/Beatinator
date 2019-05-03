@@ -26,11 +26,16 @@ public class CircleColision : MonoBehaviour
     {
         canMove = false;
     }
-    
+
+    private static bool debug = true;
     //Is used in the Move class
     //to limit movement to once per beat
     public static bool TryMoving()
     {
+        //Used for debugging!
+        if (debug)
+            return true;
+
         if (canMove)
         {
             canMove = false;

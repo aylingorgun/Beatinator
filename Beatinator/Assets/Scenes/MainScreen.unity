@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.43784055, g: 0.4857607, b: 0.5660381, a: 1}
+  m_IndirectSpecularColor: {r: 0.43784013, g: 0.48575997, b: 0.56603676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1511,7 +1511,7 @@ MonoBehaviour:
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -3423,7 +3423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   step: 2
-  jumpHeight: 0
+  jumpHeight: 0.35
   faultNumber: {fileID: 1058295212}
   RetryUI: {fileID: 445902847}
   player: {fileID: 2115078658}

@@ -37,8 +37,12 @@ public class GenerateHolesandWalls : MonoBehaviour
 
         while (holeCount < 10)
         {
-            xPos = Random.Range(xMin, xMax+1);
-            zPos = Random.Range(zMin, zMax+1);
+            //xPos gets a value from {-4, -2, 0, 2, 4}
+            xPos = Random.Range(-2, 3)*2;
+            //xPos = Random.Range(xMin, xMax+1);
+
+            //zPos is kinda broken
+            zPos = Random.Range(zMin, zMax+1)*2;
 
             switch (i)
             {
@@ -48,7 +52,7 @@ public class GenerateHolesandWalls : MonoBehaviour
                     holeCount++;
                     break;
                 case 1:
-                    Instantiate(HolesAndWalls[1], new Vector3(xPos, 0.30f, zPos), Quaternion.Euler(105, 0, 0));
+                    Instantiate(HolesAndWalls[1], new Vector3(xPos, 0.30f, zPos), Quaternion.Euler(0, 0, 0));
                     yield return new WaitForSeconds(0);
                     holeCount++;
                     break;

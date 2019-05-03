@@ -16,14 +16,19 @@ public class Move : MonoBehaviour
 
     public BoxCollider player;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log("Has collided with " + other.attachedRigidbody.tag);
-        if(other.gameObject.tag == "Hole" || other.gameObject.tag == "Wall2")
+
+        if (collision.gameObject.tag == "Hole")
         {
             player.enabled = false;
             RetryUI.SetActive(true);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Has collided with " + other.transform.tag);
     }
 
     void Update()
