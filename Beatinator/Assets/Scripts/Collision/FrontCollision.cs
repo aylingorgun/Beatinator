@@ -8,12 +8,14 @@ public class FrontCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        isFrontAvailable = false;
+        if (other.tag == "Wall")
+            isFrontAvailable = false;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        isFrontAvailable = false;
+        if (other.tag == "Wall")
+            isFrontAvailable = false;
     }
 
     private void OnTriggerExit(Collider other)

@@ -14,17 +14,23 @@ public class Move : MonoBehaviour
 
     public GameObject RetryUI;
 
-    private BoxCollider player;
+    public static BoxCollider player;
 
     private void OnCollisionEnter(Collision collision)
     {
 
         if (collision.gameObject.tag == "Hole")
         {
-            player.enabled = false;
-            RetryUI.SetActive(true);
+            Death();
         }
     }
+
+    public void Death()
+    {
+        player.enabled = false;
+        RetryUI.SetActive(true);
+    }
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -33,7 +39,7 @@ public class Move : MonoBehaviour
 
     private void Start()
     {
-        player = (BoxCollider)GameObject.FindGameObjectWithTag("Player").GetComponent("BoxCollider");
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider>();
     }
 
     void Update()

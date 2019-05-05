@@ -8,12 +8,14 @@ public class LeftCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        isLeftAvailable = false;
+        if (other.tag == "Wall")
+            isLeftAvailable = false;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        isLeftAvailable = false;
+        if (other.tag == "Wall")
+            isLeftAvailable = false;
     }
 
     private void OnTriggerExit(Collider other)

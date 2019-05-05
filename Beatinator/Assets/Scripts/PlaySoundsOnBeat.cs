@@ -13,30 +13,22 @@ public class PlaySoundsOnBeat : MonoBehaviour
     int _randomStrum;
     //Your items that will be created according to your beat
     public GameObject myPrefab1, myPrefab2;
-
-    public Animation left, right;
-
+    private ChaserFollow chaser;
     private void Start()
     {
-
-        left.gameObject.GetComponent<Animation>().enabled = false;
-        right.gameObject.GetComponent<Animation>().enabled = false;
+        chaser = FindObjectOfType<ChaserFollow>();
     }
-
 
     void Update()
     {
         if (BPM._beatFull)
         {
             _soundManager.Playsound(_tap, 1);
-            if (BPM._beatCountFull % 2 == 0)
+            if (BPM._beatCountFull % 4 == 0)
             {
-                //Throws some errors when pausing
-                left.gameObject.GetComponent<Animation>().enabled = true;
-                right.gameObject.GetComponent<Animation>().enabled = true;
-
-                GameObject go = (GameObject)Instantiate(myPrefab1, transform.position, Quaternion.identity);
-                _randomStrum = Random.Range(0, _strum.Length);
+                //chaser.MoveOnBeat();
+                //GameObject go = (GameObject)Instantiate(myPrefab1, transform.position, Quaternion.identity);
+                //_randomStrum = Random.Range(0, _strum.Length);
             }
         }
         if (BPM._beatD8 && BPM._beatcountD8 % 2 == 0)

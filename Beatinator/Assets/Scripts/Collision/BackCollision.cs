@@ -8,14 +8,16 @@ public class BackCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        isBackAvailable = false;
+        if(other.tag == "Wall")
+            isBackAvailable = false;
     }
 
     //When the plane prefab changes the exit method gets called
     //so player may drop out unless stay method is also implemented
     private void OnTriggerStay(Collider other)
     {
-        isBackAvailable = false;
+        if (other.tag == "Wall")
+            isBackAvailable = false;
     }
 
     private void OnTriggerExit(Collider other)

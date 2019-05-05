@@ -12,6 +12,7 @@ TagManager:
   - Hole
   - Wall2
   - Chaser
+  - Retry
   layers:
   - Default
   - TransparentFX

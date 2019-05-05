@@ -8,12 +8,14 @@ public class RightCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        isRightAvailable = false;
+        if (other.tag == "Wall")
+            isRightAvailable = false;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        isRightAvailable = false;
+        if (other.tag == "Wall")
+            isRightAvailable = false;
     }
 
     private void OnTriggerExit(Collider other)

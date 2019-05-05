@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseUI;
 
 
-    public void Ppressed()
+    public void Pressed()
     {
         if (GameIsPaused)
             Resume();

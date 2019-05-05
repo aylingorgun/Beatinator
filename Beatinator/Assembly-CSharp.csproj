@@ -62,13 +62,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BPM.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\ChaserFollow.cs" />
     <Compile Include="Assets\Scripts\Collision\BackCollision.cs" />
     <Compile Include="Assets\Scripts\Collision\CircleColision.cs" />
     <Compile Include="Assets\Scripts\Collision\FrontCollision.cs" />
     <Compile Include="Assets\Scripts\Collision\LeftCollision.cs" />
     <Compile Include="Assets\Scripts\Collision\RightCollision.cs" />
+    <Compile Include="Assets\Scripts\Deprecated\Groove.cs" />
     <Compile Include="Assets\Scripts\GenerateHolesandWalls.cs" />
-    <Compile Include="Assets\Scripts\Groove.cs" />
     <Compile Include="Assets\Scripts\Menus\OpeningMenu.cs" />
     <Compile Include="Assets\Scripts\Menus\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Move.cs" />
@@ -130,6 +131,9 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>C:/Users/Nurdan/Desktop/Beatinator/Beatinator/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Nurdan/Desktop/Beatinator/Beatinator/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -139,17 +143,14 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/Nurdan/Desktop/Beatinator/Beatinator/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>C:/Users/Nurdan/Desktop/Beatinator/Beatinator/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/Nurdan/Desktop/Beatinator/Beatinator/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>C:/Users/Nurdan/Desktop/Beatinator/Beatinator/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
-      <HintPath>C:/Users/Nurdan/Desktop/Beatinator/Beatinator/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.AddOns.Editor">
-      <HintPath>C:/Users/Nurdan/Desktop/Beatinator/Beatinator/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
