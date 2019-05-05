@@ -16,6 +16,8 @@ public class Move : MonoBehaviour
 
     public static BoxCollider player;
 
+    private ChaserFollow chaser;
+
     private void OnCollisionEnter(Collision collision)
     {
 
@@ -40,6 +42,7 @@ public class Move : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider>();
+        chaser = FindObjectOfType<ChaserFollow>();
     }
 
     void Update()
@@ -83,5 +86,6 @@ public class Move : MonoBehaviour
     private void Mistake()
     {
         faultNumber.SetText((++faultCount).ToString());
+        chaser.GetCloser();
     }
 }

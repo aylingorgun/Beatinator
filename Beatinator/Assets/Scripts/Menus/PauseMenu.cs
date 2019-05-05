@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseUI;
 
 
-    public void Pressed()
+    public void Ppressed()
     {
         if (GameIsPaused)
             Resume();
@@ -39,7 +39,7 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void QuitGAme()
+    public void QuitGame()
     {
         Application.Quit();
     }

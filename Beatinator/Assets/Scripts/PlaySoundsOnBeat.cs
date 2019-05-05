@@ -19,26 +19,12 @@ public class PlaySoundsOnBeat : MonoBehaviour
         chaser = FindObjectOfType<ChaserFollow>();
     }
 
-    void Update()
+    public void FullBeatMovement()
     {
-        if (BPM._beatFull)
-        {
-            _soundManager.Playsound(_tap, 1);
-            if (BPM._beatCountFull % 4 == 0)
-            {
-                //chaser.MoveOnBeat();
-                //GameObject go = (GameObject)Instantiate(myPrefab1, transform.position, Quaternion.identity);
-                //_randomStrum = Random.Range(0, _strum.Length);
-            }
-        }
-        if (BPM._beatD8 && BPM._beatcountD8 % 2 == 0)
-        {
-          //  _soundManager.Playsound(_tick, 0.1f);
-        }
-        if (BPM._beatD8 && (BPM._beatcountD8) % 8 == 2 || (BPM._beatcountD8) % 8 == 4)
-        {
-            //GameObject go = (GameObject)Instantiate(myPrefab2, transform.position, transform.rotation);
-            //_soundManager.Playsound(_strum[_randomStrum], 1);
-        }
+        _soundManager.Playsound(_tap, 1);
+        if (BPM._beatCountFull % 4 == 0)
+            chaser.GetCloser();
+        else
+            chaser.CheckIfLeftBehind();
     }
 }

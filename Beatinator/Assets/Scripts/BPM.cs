@@ -29,7 +29,9 @@ public class BPM : MonoBehaviour
         else
         {
             _BPMInstance = this;
-            DontDestroyOnLoad(this.gameObject);
+            //ZHA
+            //omotor hotosu
+            //DontDestroyOnLoad(this.gameObject);
         }
     }
  
@@ -73,7 +75,11 @@ public class BPM : MonoBehaviour
     }
     #endregion
 
-
+    private void Start()
+    {
+        ps = FindObjectOfType<PlaySoundsOnBeat>();
+    }
+    private PlaySoundsOnBeat ps;
     void BeatDetection()
     {
         //Full beat count
@@ -84,6 +90,7 @@ public class BPM : MonoBehaviour
         {
             _beatTimer -= _beatInterval;
             _beatFull = true;
+            ps.FullBeatMovement();
             _beatCountFull++;
             //Debug.Log("Full");
         }

@@ -15,10 +15,17 @@ public class ChaserFollow : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void MoveOnBeat()
+    //booleans represent where the getcloser method is called from
+    public void GetCloser()
     {
-        //Errors after retrying
-        chaser.transform.position += Vector3.forward * step;
+            chaser.transform.position += Vector3.forward * step;
+    }
+    
+
+    public void CheckIfLeftBehind()
+    {
+        if (transform.position.z + followDistance < player.transform.position.z)
+            GetCloser();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,11 +35,4 @@ public class ChaserFollow : MonoBehaviour
         else
             Destroy(other.gameObject);
     }
-
-    private void Update()
-    {
-        if (transform.position.z + followDistance < player.transform.position.z)
-            MoveOnBeat();
-    }
-
 }
