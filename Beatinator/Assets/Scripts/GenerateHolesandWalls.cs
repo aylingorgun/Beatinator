@@ -5,11 +5,11 @@ using UnityEngine;
 public class GenerateHolesandWalls : MonoBehaviour
 {
 
-    public GameObject xMinObj;
-    public GameObject xMaxObj;
+    //public GameObject xMinObj;
+    //public GameObject xMaxObj;
 
-    public GameObject zMinObj;
-    public GameObject zMaxObj;
+    //public GameObject zMinObj;
+    //public GameObject zMaxObj;
 
     public GameObject[] HolesAndWalls;
     public int xPos;
@@ -19,7 +19,7 @@ public class GenerateHolesandWalls : MonoBehaviour
 
     int i;
 
-    int xMin, xMax, zMin, zMax;
+    //int xMin, xMax, zMin, zMax;
 
     void Start()
     {
@@ -29,11 +29,10 @@ public class GenerateHolesandWalls : MonoBehaviour
 
     IEnumerator HoleDrop()
     {
-        xMin = (int)(xMinObj.transform.position.x);
-        xMax = (int)(xMaxObj.transform.position.x);
-
-        zMin = (int)(zMinObj.transform.position.z);
-        zMax = (int)(zMaxObj.transform.position.z);
+        //xMin = (int)(xMinObj.transform.position.x);
+        //xMax = (int)(xMaxObj.transform.position.x);
+        //zMin = (int)(zMinObj.transform.position.z);
+        //zMax = (int)(zMaxObj.transform.position.z);
 
         while (holeCount < 10)
         {
@@ -42,7 +41,8 @@ public class GenerateHolesandWalls : MonoBehaviour
             //xPos = Random.Range(xMin, xMax+1);
 
             //zPos is kinda broken
-            zPos = Random.Range(zMin, zMax+1)*2;
+            //zPos = Random.Range(zMin, zMax+1)*2;
+            zPos = Random.Range(-10, 11) * 2 + System.Convert.ToInt32(transform.position.z);
 
             switch (i)
             {
