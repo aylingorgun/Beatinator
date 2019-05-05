@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;
 
     //Movement speed of camera.
     public float smoothMovementSpeed = 0.01f;
@@ -26,6 +26,7 @@ public class CameraFollow : MonoBehaviour
     private void Start()
     {
         //Default values
+        target = GameObject.FindGameObjectWithTag("Player").transform;
 
         //Camera position starts from target position + offset
         transform.position = target.position + offset;

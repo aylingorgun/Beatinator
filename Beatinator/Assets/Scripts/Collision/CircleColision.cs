@@ -12,7 +12,6 @@ public class CircleColision : MonoBehaviour
         if (collision.gameObject.tag == "Ball")
         {
             canMove = true;
-
         }
     }
 
@@ -27,7 +26,10 @@ public class CircleColision : MonoBehaviour
         canMove = false;
     }
 
+    //Is used for testing props
+    //without movement impairments
     private static bool debug = true;
+    
     //Is used in the Move class
     //to limit movement to once per beat
     public static bool TryMoving()

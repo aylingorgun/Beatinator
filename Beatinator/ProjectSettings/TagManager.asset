@@ -11,6 +11,7 @@ TagManager:
   - Ball
   - Hole
   - Wall2
+  - Chaser
   layers:
   - Default
   - TransparentFX

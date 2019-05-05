@@ -14,7 +14,7 @@ public class Move : MonoBehaviour
 
     public GameObject RetryUI;
 
-    public BoxCollider player;
+    private BoxCollider player;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -29,6 +29,11 @@ public class Move : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Has collided with " + other.transform.tag);
+    }
+
+    private void Start()
+    {
+        player = (BoxCollider)GameObject.FindGameObjectWithTag("Player").GetComponent("BoxCollider");
     }
 
     void Update()
