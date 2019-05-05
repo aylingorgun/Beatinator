@@ -12,7 +12,7 @@ public class TileManager : MonoBehaviour
     private Transform playerTransform;
     // This is inital tiles starting point it exists because 
     //if we don't have this first tile will be created above us.
-    private float spawnZ = -12f;
+    private float spawnZ = 0f;
     //Our tiles length we have this because we will calculate 
     //where should we create the next tile.
     private float tileLength = 30f;   
@@ -24,6 +24,8 @@ public class TileManager : MonoBehaviour
     private int lastPrefabIndex = 0;
     //We have a list to store amntofTiles for keeping track of deleting.
     private List<GameObject> activeTiles;
+
+    private GenerateHolesandWalls haw;
 
     private void Start()
     {
@@ -57,7 +59,14 @@ public class TileManager : MonoBehaviour
             go = Instantiate(tilePrefabs[RandomPrefabIndex()]) as GameObject;
         }
         else
+        {
+            if (prefabIndex == 0)
+            {
+                haw = FindObjectOfType<GenerateHolesandWalls>();
+                Destroy(haw);
+            }
             go = Instantiate(tilePrefabs[prefabIndex]) as GameObject;
+        }
 
         go.transform.SetParent(transform);
         go.transform.position = Vector3.forward * spawnZ;

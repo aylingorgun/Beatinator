@@ -47,7 +47,7 @@ public class Move : MonoBehaviour
 
     void Update()
     {
-      
+       
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.position += Vector3.up * jumpHeight;
