@@ -14,6 +14,7 @@ public class PlaySoundsOnBeat : MonoBehaviour
     //Your items that will be created according to your beat
     public GameObject myPrefab1, myPrefab2;
     private ChaserFollow chaser;
+
     private void Start()
     {
         chaser = FindObjectOfType<ChaserFollow>();
@@ -21,9 +22,12 @@ public class PlaySoundsOnBeat : MonoBehaviour
 
     public void FullBeatMovement()
     {
-        _soundManager.Playsound(_tap, 1);
+        //_soundManager.Playsound(_tap, 1);
         if (BPM._beatCountFull % 4 == 0)
+        {
             chaser.GetCloser();
+        }
+
         else
             chaser.CheckIfLeftBehind();
     }

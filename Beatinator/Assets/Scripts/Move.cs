@@ -18,6 +18,8 @@ public class Move : MonoBehaviour
 
     private ChaserFollow chaser;
 
+    public Swipe swipeControls;
+
     private void OnCollisionEnter(Collision collision)
     {
 
@@ -47,8 +49,8 @@ public class Move : MonoBehaviour
 
     void Update()
     {
-       
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        //Input.GetKeyDown(KeyCode.LeftArrow)
+        if (swipeControls.SwipeLeft)
         {
             transform.position += Vector3.up * jumpHeight;
             if (LeftCollision.isLeftAvailable && CircleColision.TryMoving())
@@ -56,7 +58,8 @@ public class Move : MonoBehaviour
             else
                 Mistake();
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        //Input.GetKeyDown(KeyCode.RightArrow)
+        if (swipeControls.SwipeRight)
         {
             transform.position += Vector3.up * jumpHeight;
             if (RightCollision.isRightAvailable && CircleColision.TryMoving())
@@ -64,7 +67,8 @@ public class Move : MonoBehaviour
             else
                 Mistake();
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        //Input.GetKeyDown(KeyCode.UpArrow)
+        if (swipeControls.SwipeUp)
         {
             transform.position += Vector3.up * jumpHeight;
             if (FrontCollision.isFrontAvailable && CircleColision.TryMoving())
@@ -72,7 +76,8 @@ public class Move : MonoBehaviour
             else
                 Mistake();
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        //Input.GetKeyDown(KeyCode.DownArrow)
+        if (swipeControls.SwipeDown)
         {
             transform.position += Vector3.up * jumpHeight;
             if (BackCollision.isBackAvailable && CircleColision.TryMoving())

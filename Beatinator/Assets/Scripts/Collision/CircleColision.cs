@@ -6,11 +6,13 @@ public class CircleColision : MonoBehaviour
 {
     private static bool canMove;
     private float timer;
+    public GameObject audioS;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ball")
         {
+            audioS.SetActive(true);
             canMove = true;
         }
     }
@@ -23,6 +25,9 @@ public class CircleColision : MonoBehaviour
 
     void Start()
     {
+        audioS.GetComponent<AudioSource>();
+        audioS.SetActive(false);
+
         canMove = false;
     }
 
