@@ -72,7 +72,7 @@ public class Swipe : MonoBehaviour
             }
             else
             {
-                // Up or DOwn
+                // Up or Down
                 if (y < 0)
                     swipeDown = true;
                 else

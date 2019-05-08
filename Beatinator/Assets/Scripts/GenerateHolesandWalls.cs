@@ -34,25 +34,35 @@ public class GenerateHolesandWalls : MonoBehaviour
         //zMin = (int)(zMinObj.transform.position.z);
         //zMax = (int)(zMaxObj.transform.position.z);
 
-        while (holeCount < 10)
+        while (holeCount < 15)
         {
             //xPos gets a value from {-4, -2, 0, 2, 4}
-            xPos = Random.Range(-2, 3)*2;
             //xPos = Random.Range(xMin, xMax+1);
-
             //zPos is kinda broken
             //zPos = Random.Range(zMin, zMax+1)*2;
-            zPos = Random.Range(-10, 11) * 2 + System.Convert.ToInt32(transform.position.z);
+
+            //Hopefully prevents spawn overlap
+            int maxRetries = 25;
+            while (true)
+            {
+                xPos = Random.Range(-2, 3) * 2;
+                zPos = Random.Range(-10, 11) * 2 + System.Convert.ToInt32(transform.position.z);
+                if (Physics.OverlapSphere(new Vector3(xPos, 1, zPos), 0.8f).Length == 0)
+                    break;
+                maxRetries--;
+                if (--maxRetries == 0)
+                    yield return new WaitForSeconds(0);
+            }
 
             switch (i)
             {
                 case 0:
-                    Instantiate(HolesAndWalls[0], new Vector3(xPos, 0.15f, zPos), Quaternion.Euler(0, 180, 0));
+                    Instantiate(HolesAndWalls[0], new Vector3(xPos, 0.1f, zPos), Quaternion.Euler(0, 180, 0));
                     yield return new WaitForSeconds(0);
                     holeCount++;
                     break;
                 case 1:
-                    Instantiate(HolesAndWalls[1], new Vector3(xPos, 0.30f, zPos), Quaternion.Euler(0, 0, 0));
+                    Instantiate(HolesAndWalls[1], new Vector3(xPos, 1f, zPos), Quaternion.Euler(0, 0, 0));
                     yield return new WaitForSeconds(0);
                     holeCount++;
                     break;

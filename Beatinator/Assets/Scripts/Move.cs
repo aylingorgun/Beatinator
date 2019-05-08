@@ -49,8 +49,8 @@ public class Move : MonoBehaviour
 
     void Update()
     {
-        //Input.GetKeyDown(KeyCode.LeftArrow)
-        if (swipeControls.SwipeLeft)
+        //swipeControls.SwipeLeft
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.position += Vector3.up * jumpHeight;
             if (LeftCollision.isLeftAvailable && CircleColision.TryMoving())
@@ -58,8 +58,8 @@ public class Move : MonoBehaviour
             else
                 Mistake();
         }
-        //Input.GetKeyDown(KeyCode.RightArrow)
-        if (swipeControls.SwipeRight)
+        //swipeControls.SwipeRight
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             transform.position += Vector3.up * jumpHeight;
             if (RightCollision.isRightAvailable && CircleColision.TryMoving())
@@ -67,8 +67,8 @@ public class Move : MonoBehaviour
             else
                 Mistake();
         }
-        //Input.GetKeyDown(KeyCode.UpArrow)
-        if (swipeControls.SwipeUp)
+        //swipeControls.SwipeUp
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             transform.position += Vector3.up * jumpHeight;
             if (FrontCollision.isFrontAvailable && CircleColision.TryMoving())
@@ -76,8 +76,8 @@ public class Move : MonoBehaviour
             else
                 Mistake();
         }
-        //Input.GetKeyDown(KeyCode.DownArrow)
-        if (swipeControls.SwipeDown)
+        //swipeControls.SwipeDown
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             transform.position += Vector3.up * jumpHeight;
             if (BackCollision.isBackAvailable && CircleColision.TryMoving())
