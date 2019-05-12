@@ -15,19 +15,32 @@ public class PlaySoundsOnBeat : MonoBehaviour
     public GameObject myPrefab1, myPrefab2;
     private ChaserFollow chaser;
 
+    //Testing following enemies, definitely remove
+    public GameObject followerBox;
+    private FollowingEnemy feScript;
+
     private void Start()
     {
         chaser = FindObjectOfType<ChaserFollow>();
+        Instantiate(followerBox, new Vector3(4, 1, 4), followerBox.transform.rotation);
+        feScript = FindObjectOfType<FollowingEnemy>();
     }
 
     public void FullBeatMovement()
     {
         //_soundManager.Playsound(_tap, 1);
+        
+        //These are messed up
+        //Should not be calling every fe script directly
         if (BPM._beatCountFull % 4 == 0)
         {
             chaser.GetCloser();
+            feScript.MoveTowards();
         }
-
+        else if(BPM._beatCountFull % 2 == 0)
+        {
+            feScript.MoveTowards();
+        }
         else
             chaser.CheckIfLeftBehind();
     }

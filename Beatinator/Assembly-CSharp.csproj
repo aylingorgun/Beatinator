@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Collision\RightCollision.cs" />
     <Compile Include="Assets\Scripts\Deprecated\Groove.cs" />
     <Compile Include="Assets\Scripts\Deprecated\SideEnemy.cs" />
+    <Compile Include="Assets\Scripts\FollowingEnemy.cs" />
     <Compile Include="Assets\Scripts\GenerateHolesandWalls.cs" />
     <Compile Include="Assets\Scripts\Menus\OpeningMenu.cs" />
     <Compile Include="Assets\Scripts\Menus\PauseMenu.cs" />
