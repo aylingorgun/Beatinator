@@ -72,7 +72,6 @@ public class TileManager : MonoBehaviour
         go.transform.position = Vector3.forward * spawnZ;
         spawnZ += tileLength;
         activeTiles.Add(go);
-        GenerateHolesandWalls.holeCount = 0;
     }
 
     private void DeleteTile()

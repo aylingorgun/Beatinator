@@ -4,72 +4,68 @@ using UnityEngine;
 
 public class GenerateHolesandWalls : MonoBehaviour
 {
-
-    //public GameObject xMinObj;
-    //public GameObject xMaxObj;
-
-    //public GameObject zMinObj;
-    //public GameObject zMaxObj;
-
     public GameObject[] HolesAndWalls;
-    public int xPos;
-    public int zPos;
+    private int xPos;
+    private int zPos;
 
-    public static int holeCount;
+    private int holeCount;
 
-    int i;
-
-    //int xMin, xMax, zMin, zMax;
+    private int randomIndex;
 
     void Start()
     {
         holeCount = 0;
-        StartCoroutine(HoleDrop());   
+        Generator();
+        //StartCoroutine(HoleDrop());   
     }
 
+    //Duped and don't know which one is better.
     IEnumerator HoleDrop()
     {
-        //xMin = (int)(xMinObj.transform.position.x);
-        //xMax = (int)(xMaxObj.transform.position.x);
-        //zMin = (int)(zMinObj.transform.position.z);
-        //zMax = (int)(zMaxObj.transform.position.z);
-
-        while (holeCount < 15)
+        while (holeCount < 10)
         {
-            //xPos gets a value from {-4, -2, 0, 2, 4}
-            //xPos = Random.Range(xMin, xMax+1);
-            //zPos is kinda broken
-            //zPos = Random.Range(zMin, zMax+1)*2;
-
             //Hopefully prevents spawn overlap
             int maxRetries = 25;
             while (true)
             {
                 xPos = Random.Range(-2, 3) * 2;
-                zPos = Random.Range(-10, 11) * 2 + System.Convert.ToInt32(transform.position.z);
+                zPos = Random.Range(-7, 8) * 2 + System.Convert.ToInt32(transform.position.z);
                 if (Physics.OverlapSphere(new Vector3(xPos, 1, zPos), 0.8f).Length == 0)
                     break;
                 maxRetries--;
                 if (--maxRetries == 0)
-                    yield return new WaitForSeconds(0);
+                    yield return null;
             }
 
-            switch (i)
+            //Vectorized
+            Instantiate(HolesAndWalls[randomIndex], new Vector3(xPos, HolesAndWalls[randomIndex].transform.position.y, zPos), HolesAndWalls[randomIndex].transform.rotation);
+            yield return null;
+            holeCount++;
+            randomIndex = Random.Range(0, 2);
+        }
+    }
+
+    private void Generator()
+    {
+        while (holeCount < 10)
+        {
+            //Hopefully prevents spawn overlap
+            int maxRetries = 25;
+            while (true)
             {
-                case 0:
-                    Instantiate(HolesAndWalls[0], new Vector3(xPos, 0.1f, zPos), Quaternion.Euler(0, 180, 0));
-                    yield return new WaitForSeconds(0);
-                    holeCount++;
+                xPos = Random.Range(-2, 3) * 2;
+                zPos = Random.Range(-7, 8) * 2 + System.Convert.ToInt32(transform.position.z);
+                if (Physics.OverlapSphere(new Vector3(xPos, 1, zPos), 0.8f).Length == 0)
                     break;
-                case 1:
-                    Instantiate(HolesAndWalls[1], new Vector3(xPos, 1f, zPos), Quaternion.Euler(0, 0, 0));
-                    yield return new WaitForSeconds(0);
-                    holeCount++;
-                    break;
-                default: break;
-
+                maxRetries--;
+                if (--maxRetries == 0)
+                    return;
             }
-            i = Random.Range(0, 2);       
+
+            //Vectorized
+            Instantiate(HolesAndWalls[randomIndex], new Vector3(xPos, HolesAndWalls[randomIndex].transform.position.y, zPos), HolesAndWalls[randomIndex].transform.rotation);
+            holeCount++;
+            randomIndex = Random.Range(0, 2);
         }
     }
 }
