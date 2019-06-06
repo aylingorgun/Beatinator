@@ -33,7 +33,7 @@ public class CircleColision : MonoBehaviour
 
     //Is used for testing props
     //without movement impairments
-    private static bool debug = true;
+    private static bool debug = false;
     
     //Is used in the Move class
     //to limit movement to once per beat
